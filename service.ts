@@ -3,6 +3,7 @@
 // en 2015 => ES Modules (mot clé import et export)
 
 import fetch from 'node-fetch';
+import collegue from './collegue';
 
 export class Service {
     
@@ -22,11 +23,11 @@ export class Service {
     // créer un collègue
 
     async setCollegues(){
-        const body = 
+        const body: collegue = 
             {nom: "Léléfan",
             photo: "super trompe",
             prenom: "Babar",
-            pseudo: "Dumbo",};
+            pseudo: "Dumbo"};
 
         const response = await fetch('https://formation-angular-collegues.herokuapp.com/api/v1/collegues', {
             method: 'post',
@@ -35,7 +36,7 @@ export class Service {
         });
         const data = await response.json();
         
-        console.log(data);
+        return(data);
     }
   
 
