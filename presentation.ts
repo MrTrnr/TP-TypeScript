@@ -1,10 +1,11 @@
 import * as readline from 'node:readline';
 import { stdin as input, stdout as output }  from 'process';
+import { Service } from './service';
 const rl = readline.createInterface({ input, output });
 
 export class Presentation {
-
-    constructor(service) {
+    service: Service;
+    constructor(service: Service) {
         this.service = service;
     }
 
