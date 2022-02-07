@@ -1,0 +1,6 @@
+{
+  "nom": "string",
+  "photo": "string",
+  "prenom": "string",
+  "pseudo": "string"
+}

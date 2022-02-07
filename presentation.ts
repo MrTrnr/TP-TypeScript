@@ -12,6 +12,7 @@ export class Presentation {
     demarrer() {
         console.log('** Administration Collegues **');
         console.log("1. Lister les collègues");
+        console.log("2. Créer un collègue");
         console.log("99. Sortir");
 
         rl.question('Que souhaitez-vous faire ? ', (answer) => {
@@ -26,6 +27,20 @@ export class Presentation {
                             for(const col of tab) {
                                 console.log(col.nom, col.prenom);
                             }
+                            this.demarrer();
+                        })
+                        .catch(err => {
+                            console.log('Ooppps', err);
+                        }); 
+                    break;
+
+                    case "2":
+                    console.log(`>> Créer un collègue`);
+                 
+                    this.service.setCollegues()
+                        .then(()=> {
+                            
+                            //faire qq chose
                             this.demarrer();
                         })
                         .catch(err => {

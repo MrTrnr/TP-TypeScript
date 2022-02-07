@@ -19,5 +19,25 @@ export class Service {
 
     // }
 
+    // créer un collègue
+
+    async setCollegues(){
+        const body = 
+            {nom: "Léléfan",
+            photo: "super trompe",
+            prenom: "Babar",
+            pseudo: "Dumbo",};
+
+        const response = await fetch('https://formation-angular-collegues.herokuapp.com/api/v1/collegues', {
+            method: 'post',
+            body: JSON.stringify(body),
+            headers: {'Content-Type': 'application/json'}
+        });
+        const data = await response.json();
+        
+        console.log(data);
+    }
+  
+
     
 }
